@@ -1,0 +1,294 @@
+body {
+    font-family: Arial, sans-serif; /* Основной шрифт */
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9; /* Фоновый цвет */
+    justify-content: center; /* Центровка по горизонтали */
+    align-items: center; /* Центровка по вертикали */
+    display: flex; 
+    flex-direction: column; /* Вертикальное расположение элементов */
+    min-height: 100vh; /* Минимальная высота 100% от высоты окна */
+}
+
+header {
+    background-color: #333; /* Темный фон */
+    color: white; /* Белый текст */
+    padding: 1rem; /* Внутренние отступы */
+    text-align: center; /* Центровка текста */
+    width: 100%; /* Полная ширина */
+    box-sizing: border-box; /* Включаем padding в ширину */
+}
+
+/* Стили для контейнера */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Центровка по горизонтали */
+    padding: 20px; /* Внутренние отступы */
+    background-color: #fff; /* Белый фон */
+    border-radius: 8px; /* Скругленные углы */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Легкая тень */
+    margin: 20px auto; /* Внешние отступы */
+    width: 95%; /* Ширина контейнера */
+    max-width: 1600px; /* Максимальная ширина */
+}
+
+/* Стили для текстовых полей */
+input[type="text"], input[type="email"] {
+    padding: 10px; 
+    margin-top: 10px; 
+    width: 300px; /* Ширина поля */
+    box-sizing: border-box; /* Включаем padding в ширину */
+}
+
+/* Стили для кнопок */
+button {
+    padding: 10px 20px; /* Внутренние отступы */
+    font-size: 16px; /* Размер шрифта */
+    cursor: pointer; /* Курсор указатель */
+    background-color: #007bff; 
+    color: #fff; /* Белый текст */
+    border: none; /* Без границы */
+    border-radius: 4px; /* Скругленные углы */
+    margin-top: 10px; /* Внешний отступ сверху */
+}
+
+/* Стили для кнопки при наведении */
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Стили для блока фильтров */
+#filters {
+    margin-top: 1rem; 
+    display: flex;
+    justify-content: center; 
+    gap: 1rem; 
+}
+
+/* Стили для выпадающих списков */
+select {
+    padding: 0.5rem;
+    font-size: 1rem;
+}
+
+/* Стили для основного контента */
+main {
+    padding: 1rem;
+    width: 100%; 
+}
+
+/* Стили для списка фильмов */
+#movies-list {
+    list-style-type: none; 
+    padding: 0; 
+}
+
+/* Стили для каждого элемента списка фильмов */
+#movies-list li {
+    display: flex; /* Flexbox */
+    align-items: flex-start; /* Выровнять по началу */
+    margin-bottom: 2rem; /* Внешний отступ снизу */
+    border-bottom: 1px solid #ddd; /* Нижняя граница */
+    padding-bottom: 1rem; /* Внутренний отступ снизу */
+    position: relative; /* Относительное позиционирование */
+    width: 100%; /* Полная ширина */
+}
+
+/* Стили для колонки фильма */
+.movie-column {
+    flex: 1; 
+    padding: 0 1rem; 
+}
+
+/* Стили для первой колонки */
+.movie-column:first-child {
+    max-width: 200px; 
+}
+
+/* Стили для блока информации о фильме */
+.movie-info {
+    display: flex; 
+    flex-direction: column; 
+}
+
+/* Стили для заголовка фильма */
+.movie-title {
+    font-size: 1.2rem; 
+    margin: 0; 
+}
+
+/* Стили для даты и жанров фильма */
+.movie-date,
+.movie-genres {
+    font-size: 0.9rem; 
+    color: #555; 
+}
+
+/* Стили для описания фильма */
+.movie-overview {
+    font-size: 0.9rem;
+    color: #333; 
+}
+
+/* Стили для iframe */
+iframe {
+    width: 100%; 
+    height: 315px; 
+    border: none; 
+}
+
+/* Стили для сообщения об отсутствии трейлера */
+.no-trailer-message {
+    color: #888; 
+    font-style: italic;
+}
+
+/* Стили для кнопки удаления */
+.delete-button {
+    position: absolute; /* Абсолютное позиционирование */
+    top: 0.5rem; /* Отступ сверху */
+    right: 0.5rem; /* Отступ справа */
+    background: red; /* Красный фон */
+    color: white; /* Белый текст */
+    border: none; /* Без границы */
+    padding: 0.3rem 0.6rem; /* Внутренние отступы */
+    cursor: pointer; /* Курсор указатель */
+    border-radius: 50%; /* Круглая кнопка */
+    font-size: 1rem; /* Размер шрифта */
+}
+
+/* Стили для центрирования контента и заголовков */
+.content, h1 {
+    text-align: center;
+}
+
+/* Стили для footer */
+footer {
+    background-color: #333; /* Темный фон */
+    color: white; /* Белый текст */
+    padding: 1rem; /* Внутренние отступы */
+    text-align: center; /* Центровка текста */
+    width: 100%; /* Полная ширина */
+    margin-top: auto; /* Автоматический внешний отступ сверху */
+    box-sizing: border-box; /* Включаем padding в ширину */
+}
+
+/* Стили для посещенных ссылок */
+a:visited {
+    color: wheat;
+}
+
+/* Стили для кнопки переключения темы */
+button#themeToggleButton {
+    display: block;
+    margin: 0 auto; 
+}
+
+/* Стили для темной темы */
+body.dark-mode {
+    background-color: #121212; /* Темный фон */
+    color: #e0e0e0; /* Светлый текст */
+}
+
+/* Стили для header и footer в темной теме */
+body.dark-mode header, 
+body.dark-mode footer {
+    background-color: #1e1e1e;
+    color: #e0e0e0; 
+}
+
+/* Стили для контейнера в темной теме */
+body.dark-mode .container {
+    background-color: #2c2c2c; 
+    color: #e0e0e0; 
+}
+
+/* Стили для текстовых полей, выпадающих списков и фильтров в темной теме */
+body.dark-mode input[type="text"], 
+body.dark-mode input[type="email"], 
+body.dark-mode select, 
+body.dark-mode #filters {
+    background-color: #3c3c3c; /* Темный фон */
+    color: #e0e0e0; /* Светлый текст */
+    border: 1px solid #555; /* Темная граница */
+}
+
+/* Стили для кнопок в темной теме */
+body.dark-mode button {
+    background-color: #444; 
+    color: #e0e0e0; 
+}
+
+/* Стили для кнопок при наведении в темной теме */
+body.dark-mode button:hover {
+    background-color: #666;
+    color: #fff; 
+}
+
+/* Стили для описания фильма в темной теме */
+body.dark-mode .movie-overview {
+    color: #ddd; 
+}
+
+/* Стили для галереи */
+#gallery {
+    width: 80%; /* Ширина галереи */
+    margin: 20px auto; /* Внешние отступы */
+    padding: 1rem; /* Внутренние отступы */
+    background-color: #fff; /* Белый фон */
+    border-radius: 8px; /* Скругленные углы */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Легкая тень */
+    text-align: center; /* Центровка текста */
+}
+
+/* Стили для заголовка галереи */
+#gallery h2 {
+    font-size: 1.5rem; 
+    margin-bottom: 1rem; 
+}
+
+/* Стили для сетки галереи */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+/* Стили для элементов галереи */
+.gallery-item {
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+}
+
+/* Стили для изображений в галерее */
+.gallery-grid img {
+    width: 100%; 
+    height: auto; 
+    border-radius: 8px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+}
+
+/* Стили для подписи к изображению */
+.caption {
+    font-size: 0.9rem; 
+    color: #555; 
+    margin-top: 0.5rem; 
+}
+
+/* Стили для галереи в темной теме */
+body.dark-mode #gallery {
+    background-color: #333; 
+    color: #fff; 
+}
+
+/* Стили для изображений в галерее в темной теме */
+body.dark-mode .gallery-grid img {
+    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1); 
+}
+
+/* Стили для подписи к изображению в темной теме */
+body.dark-mode .caption {
+    color: #bbb; 
+}

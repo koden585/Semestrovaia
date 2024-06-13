@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Semestrovaia</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Топ фильмов TMDb</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+    <!-- Форма приветствия -->
     <div class="container" id="welcomeContainer">
         <h1>Добро пожаловать!</h1>
         <p>Пожалуйста, введите ваше имя:</p>
@@ -14,15 +15,111 @@
         <button id="nextButton" onclick="showMainContent()">Далее</button>
     </div>
 
+    <!-- Основной контент, скрытый по умолчанию -->
     <div class="container" id="mainContent" style="display: none;">
         <header>
+            <!-- Приветственное сообщение -->
             <div class="welcome-message">
                 <h2 id="welcomeMessage"></h2>
             </div>
-        </header>
-        <p>Это основная часть вашего сайта.</p>
-    </div>
+            <!-- Кнопка для переключения темы -->
+            <button id="themeToggleButton" onclick="toggleDarkMode()">Темная тема</button>
+        </header>        
 
-    <script src="script.js"></script>
+        <!-- Фильтры по жанрам и годам -->
+        <h1>Лучшие фильмы TMDb</h1>
+        <div id="filters">
+            <select id="genre-filter">
+                <option value="">Все жанры</option>
+            </select>
+            <select id="date-filter">
+                <option value="">Все годы</option>
+                <option value="2020-2024">2020-2024</option>
+                <option value="2015-2019">2015-2019</option>
+                <option value="2010-2014">2010-2014</option>
+                <option value="2005-2009">2005-2009</option>
+                <option value="2000-2004">2000-2004</option>
+                <option value="1995-1999">1995-1999</option>
+                <option value="1990-1994">1990-1994</option>
+                <option value="1985-1989">1985-1989</option>
+                <option value="1980-1984">1980-1984</option>
+                <option value="1970-1979">1970-1979</option>
+                <option value="1960-1969">1960-1969</option>
+                <option value="1950-1959">1950-1959</option>
+            </select>
+        </div>
+
+        <!-- Список фильмов -->
+        <main>
+            <ul id="movies-list"></ul>
+        </main>
+        
+        <!-- Галерея изображений -->
+        <div id="gallery">
+            <h2>Галерея</h2>
+            <div class="gallery-grid">
+                <!-- Элементы галереи -->
+                <div class="gallery-item">
+                    <img src="images/image1.jpg" alt="Image 1">
+                    <p class="caption">Гарри Поттер и узник Азкабана</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/image2.jpg" alt="Image 2">
+                    <p class="caption">Волк с Уолл-стрит</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/image3.jpg" alt="Image 3">
+                    <p class="caption">Джокер</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/image4.jpg" alt="Image 4">
+                    <p class="caption">Сияние</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/image5.jpg" alt="Image 5">
+                    <p class="caption">Титаник</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/image6.jpg" alt="Image 6">
+                    <p class="caption">Мстители: Финал</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/image7.jpg" alt="Image 7">
+                    <p class="caption">Маска</п>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/image8.jpg" alt="Image 8">
+                    <p class="caption">Пираты Карибского моря: Сундук мертвеца</п>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/image9.jpg" alt="Image 9">
+                    <p class="caption">Матрица: Перезагрузка</п>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Форма ввода имени и e-mail -->
+        <div class="content">
+            <form id="userForm" onsubmit="return validateForm(event)">
+                <p>Пожалуйста, введите ваше имя и e-mail:</p>
+                <input type="text" id="nameField" placeholder="Имя" required><br>
+                <input type="email" id="emailField" placeholder="E-mail" required><br>
+                <label>
+                    <input type="checkbox" id="consentCheckbox">
+                    Я согласен на раcсылку новостей
+                </label><br>
+                <button type="submit">Отправить</button>
+            </form>
+        </div>
+        
+    </div>
+    
+    <footer>
+        <p>&copy; 2024 TMDb Movies. Все права защищены.</p>
+        <p>Информация взята с сайта <a href="https://www.themoviedb.org/">The Movie Database (TMDB).</a></p>
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/ui.js"></script>
 </body>
 </html>
